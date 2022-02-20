@@ -4,7 +4,7 @@ sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.conf
 
 timedatectl set-ntp true
 timedatectl status
-pacman -S --no-confirm archlinux-keyring
+pacman -S --noconfirm archlinux-keyring
 
 
 lsblk
@@ -21,14 +21,13 @@ if [[ $answer = y ]] ; then
   mkfs.vfat -F 32 $efipartition
 fi
 
-
+mkdir /mnt/{boot,home,var}
 mount $partition /mnt
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
 btrfs subvolume create /mnt/@var
 umount /mnt
 
-mkdir /mnt/{boot,home,var}
 mount -o noatime,compress=zstd,space_cache=v2,subvol=@ $partition /mnt
 mount -o noatime,compress=zstd,space_cache=v2,subvol=@home $partition /mnt/home
 mount -o subvol=@var $partition /mnt/var
