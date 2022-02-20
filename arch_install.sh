@@ -4,8 +4,7 @@ sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.conf
 
 timedatectl set-ntp true
 timedatectl status
-
-pacman -Syu && pacman --noconfirm -S archlinux-keyring
+pacman -S --no-confirm archlinux-keyring
 
 
 lsblk
