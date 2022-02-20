@@ -1,2 +1,5 @@
 # My ARCH install script.
-**NOTE: This is literally my first bash script, and was based originally on bugswriters arch install script, with a few tweaks myself**
+
+**NOTE**: This was made for my personal use + this is my first bash script, please edit the file the way you want if you want to run it, but I will NOT help you.
+
+Thanks to bugswriters for his archinstall script, I have based mine on it.
