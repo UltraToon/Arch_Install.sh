@@ -14,7 +14,7 @@ cfdisk $drive
 echo "Enter the linux partition: "
 read partition
 mkfs.btrfs -f $partition
-read -p "Did you also create efi partition? [y/n]" answer
+read -p "Did you also create efi partition? [y/n] " answer
 if [[ $answer = y ]] ; then
   echo "Enter EFI partition: "
   read efipartition
@@ -36,7 +36,7 @@ lsblk
 
 pacstrap /mnt base linux-lts linux-firmware nvim intel-ucode btrfs-progs efibootmgr networkmanager grub grub-btrfs
 genfstab -U /mnt >> /mnt/etc/fstab
-sed '1,/^#part2$/d' `basename $0` > /mnt/arch_install2.sh
+wget https://github.com/UltraToon/Arch_install.sh/edit/main/arch_install2.sh
 chmod +x /mnt/arch_install2.sh
 arch-chroot /mnt ./arch_install2.sh
 exit
