@@ -4,7 +4,7 @@
 
 **TO USE**
 ```chmod +x ./arch_install.sh
-./arch_install.sh```
+./arch_install.sh
 
 
 
