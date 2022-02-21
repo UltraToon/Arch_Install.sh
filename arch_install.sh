@@ -72,6 +72,7 @@ echo "Enter Username: "
 read username
 useradd -m $username
 usermod -aG wheel,video $username
+echo "NOTE: Install your own DE/WM and terminal! Rebooting..."
 exit
 
 # Final
