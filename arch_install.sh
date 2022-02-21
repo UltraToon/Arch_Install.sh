@@ -65,10 +65,9 @@ sed -i 's/quiet/pci=noaer/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=3/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-pacman -S xorg-server xorg-xkill mpv pipewire pipewire-pulse alsa-utils adobe-source-sans-fonts base-devel gst-libav gst-plugins-good unzip wget xdg-utils xdg-user-dirs plasma-desktop imagemagick dolphin alacritty btop fuse2 lsd zsh mlocate git ttf-anonymous-pro ttf-bitstream-vera ttf-droid ttf-liberation ttf-nerd-fonts-symbols ttf-ubuntu-font-family jre8-openjdk feh linux-lts-headers
+pacman -Syu xorg-server xorg-xkill mpv pipewire pipewire-pulse alsa-utils adobe-source-sans-fonts base-devel gst-libav gst-plugins-good unzip wget xdg-utils xdg-user-dirs btop fuse2 lsd zsh mlocate git ttf-anonymous-pro ttf-bitstream-vera ttf-droid ttf-liberation ttf-nerd-fonts-symbols ttf-ubuntu-font-family jre8-openjdk feh linux-lts-headers
 
 systemctl enable NetworkManager
-echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 echo "Enter Username: "
 read username
 useradd -m $username
