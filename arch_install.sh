@@ -13,7 +13,7 @@ read drive
 cfdisk $drive 
 echo "Enter the linux partition: "
 read partition
-mkfs.btrfs $partition
+mkfs.btrfs -f $partition
 read -p "Did you also create efi partition? [y/n]" answer
 if [[ $answer = y ]] ; then
   echo "Enter EFI partition: "
@@ -21,7 +21,6 @@ if [[ $answer = y ]] ; then
   mkfs.vfat -F 32 $efipartition
 fi
 
-mkdir /mnt/{boot,home,var}
 mount $partition /mnt
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
